@@ -34,8 +34,8 @@ class PhoneInput extends React.Component {
 
     containerClass: PropTypes.string,
     inputClass: PropTypes.string,
-    flagViewClass: PropTypes.string,
-    selectedFlagClass: PropTypes.string,
+    buttonContainerClass: PropTypes.string,
+    buttonClass: PropTypes.string,
     dropdownClass: PropTypes.string,
     searchClass: PropTypes.string,
 
@@ -123,6 +123,7 @@ class PhoneInput extends React.Component {
     containerClass: '',
     inputClass: '',
     buttonClass: '',
+    buttonContainerClass: '',
     dropdownClass: '',
     searchClass: '',
 
@@ -923,12 +924,12 @@ class PhoneInput extends React.Component {
       'open': showDropdown,
     });
     const selectedFlagClasses = classNames({
-      [this.props.selectedFlagClass]: true,
+      [this.props.buttonClass]: true,
       'selected-flag': true,
       'open': showDropdown,
     });
     const flagViewClasses = classNames({
-      [this.props.flagViewClass]: true,
+      [this.props.buttonContainerClass]: true,
       'flag-dropdown': true,
       'invalid-number': !isValidValue,
       'open': showDropdown,
