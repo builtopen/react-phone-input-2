@@ -11,7 +11,8 @@ declare module "react-phone-input-2" {
   interface Style {
     containerClass?: string;
     inputClass?: string;
-    buttonClass?: string;
+    selectedFlagClass?: string;
+    flagViewClass?: string;
     dropdownClass?: string;
     searchClass?: string;
 

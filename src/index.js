@@ -34,7 +34,8 @@ class PhoneInput extends React.Component {
 
     containerClass: PropTypes.string,
     inputClass: PropTypes.string,
-    buttonClass: PropTypes.string,
+    flagViewClass: PropTypes.string,
+    selectedFlagClass: PropTypes.string,
     dropdownClass: PropTypes.string,
     searchClass: PropTypes.string,
 
@@ -922,11 +923,12 @@ class PhoneInput extends React.Component {
       'open': showDropdown,
     });
     const selectedFlagClasses = classNames({
+      [this.props.selectedFlagClass]: true,
       'selected-flag': true,
       'open': showDropdown,
     });
     const flagViewClasses = classNames({
-      [this.props.buttonClass]: true,
+      [this.props.flagViewClass]: true,
       'flag-dropdown': true,
       'invalid-number': !isValidValue,
       'open': showDropdown,
@@ -966,19 +968,19 @@ class PhoneInput extends React.Component {
           {renderStringAsFlag ?
           <div className={selectedFlagClasses}>{renderStringAsFlag}</div>
           :
-          <div
+          <button
+            type="button"
             onClick={disableDropdown ? undefined : this.handleFlagDropdownClick}
             className={selectedFlagClasses}
             title={selectedCountry ? `${selectedCountry.name}: + ${selectedCountry.dialCode}` : ''}
             tabIndex={disableDropdown ? '-1' : '0'}
-            role='button'
             aria-haspopup="listbox"
             aria-expanded={showDropdown ? true : undefined}
           >
             <div className={inputFlagClasses}>
               {!disableDropdown && <div className={arrowClasses}></div>}
             </div>
-          </div>}
+          </button>}
 
           {showDropdown && this.getCountryDropdownList()}
         </div>
