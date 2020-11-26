@@ -1,5 +1,5 @@
 {
-  "name": "react-phone-input-2",
+  "name": "@builtopen/react-phone-input-2",
   "version": "2.13.12",
   "description": "A react component to format phone numbers",
   "main": "lib/lib.js",
