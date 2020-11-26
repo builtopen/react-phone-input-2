@@ -102,7 +102,17 @@ declare module "@builtopen/react-phone-input-2" {
     specialLabel?: string;
     disableInitialCountryGuess?: boolean;
     disableCountryGuess?: boolean;
+
+    renderDropdownItem?: (props: {
+      flagClasses: string,
+      flagElement: React.Element,
+      countryName: string,
+      dialCode: string,
+      countryNameElement: React.Element,
+      dialCodeElement: React.Element
+    }) => React.ReactNode;
   }
+
   const PhoneInput: React.FC<PhoneInputProps>;
   export default PhoneInput;
 }
